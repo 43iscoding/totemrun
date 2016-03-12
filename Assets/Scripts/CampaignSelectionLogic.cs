@@ -11,17 +11,17 @@ public class CampaignSelectionLogic : MonoBehaviour {
 		instance = this;
 	}
 
-	public static bool LoadLevel(int index)
-	{		
+	public static void LoadLevel(int index)
+	{
+		index--;
 		if (index < 0 || index >= instance.levels.Length)
 		{
 			Debug.LogError("No level " + index.ToString("00"));
 			The.currentLevelConfig = null;
-			return false;
 		}
 
 		The.currentLevelConfig = instance.levels[index];
-		return true;
+		SceneTransition.LoadScene("Campaign");
 	}
 
 	void Update()

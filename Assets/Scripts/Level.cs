@@ -141,6 +141,11 @@ public class Level : MonoBehaviour
 		SceneTransition.LoadScene("Menu");
 	}
 
+	public void NextLevel()
+	{
+		CampaignSelectionLogic.LoadLevel(The.currentLevelConfig.index + 1);
+	}
+
 	public void SpawnCoin(Vector2 pos)
 	{
 		GameObject coin = Instantiate(coinPrefab, pos, Quaternion.identity) as GameObject;

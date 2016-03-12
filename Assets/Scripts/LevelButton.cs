@@ -38,9 +38,6 @@ public class LevelButton : MonoBehaviour
 
 	public void LoadLevel()
 	{
-		if (CampaignSelectionLogic.LoadLevel(index - 1))
-		{
-			SceneTransition.LoadScene("Campaign");
-		}
+		CampaignSelectionLogic.LoadLevel(index);
 	}
 }
