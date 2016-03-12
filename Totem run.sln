@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Totem run.CSharp", "Totem run.CSharp.csproj", "{A3EEB67F-826B-C601-B523-8F2366DD17C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Totem run.CSharp.Editor", "Totem run.CSharp.Editor.csproj", "{F36107E4-3F9D-7B40-4B8E-3CA821AAF2C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3EEB67F-826B-C601-B523-8F2366DD17C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3EEB67F-826B-C601-B523-8F2366DD17C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3EEB67F-826B-C601-B523-8F2366DD17C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3EEB67F-826B-C601-B523-8F2366DD17C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F36107E4-3F9D-7B40-4B8E-3CA821AAF2C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F36107E4-3F9D-7B40-4B8E-3CA821AAF2C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F36107E4-3F9D-7B40-4B8E-3CA821AAF2C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F36107E4-3F9D-7B40-4B8E-3CA821AAF2C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
