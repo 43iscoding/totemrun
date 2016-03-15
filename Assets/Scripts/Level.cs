@@ -10,9 +10,12 @@ public class Level : MonoBehaviour
 
 	public GameObject loseScreen;
 	public GameObject winScreen;
+	public GameObject pauseScreen;
 	public GameObject perfect;
 	public GameObject newBest;
 	public GameObject UI;
+
+	public Collider pauseButton;
 
 	public bool endless;
 
@@ -98,11 +101,11 @@ public class Level : MonoBehaviour
 
 	public void Lose()
 	{
-		StartCoroutine(LoseCoroutine());		
+		StartCoroutine(LoseCoroutine());
 	}
 
 	public void Win()
-	{		
+	{
 		StartCoroutine(WinCoroutine(coinContainer.childCount == 0));
 	}
 
@@ -111,7 +114,7 @@ public class Level : MonoBehaviour
 		Progress.LevelComplete(The.currentLevelConfig.index, perfect);
 		running = false;
 		//yield return new WaitForSeconds(1f);
-		yield return SceneTransition.FadeOut(winColor, 1f);		
+		yield return SceneTransition.FadeOut(winColor, 1f);
 		winScreen.SetActive(true);
 		this.perfect.SetActive(perfect);
 		yield return SceneTransition.FadeIn(winColor);
@@ -127,18 +130,18 @@ public class Level : MonoBehaviour
 		if (newBest != null)
 		{
 			newBest.SetActive(The.gameLogic.NewBest());
-		}		
+		}
 		yield return SceneTransition.FadeIn(loseColor);
 	}
 
 	public void Restart()
-	{		
+	{
 		SceneTransition.ReloadScene();
 	}
 
 	public void Menu()
 	{
-		SceneTransition.LoadScene("Menu");
+		SceneTransition.LoadScene("CampaignSelection");
 	}
 
 	public void NextLevel()
@@ -162,5 +165,12 @@ public class Level : MonoBehaviour
 	{
 		GameObject exit = Instantiate(exitPrefab, Vector3.right * x, Quaternion.identity) as GameObject;
 		exit.transform.SetParent(transform);
-	}	
+	}
+
+	public void Pause()
+	{
+		running = !running;
+		pauseScreen.SetActive(!running);
+		pauseButton.enabled = running;
+	}
 }

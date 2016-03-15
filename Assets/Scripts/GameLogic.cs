@@ -37,17 +37,17 @@ public class GameLogic : MonoBehaviour
 			while (!The.level.running)
 			{
 				yield return null;
-			}			
+			}
 			AddScore(1, false);
 		}
 	}
 
 	public void AddScore(int value, bool pulse)
-	{		
+	{
 		score += value;
 		if (score > Progress.Highscore)
 		{
-			Progress.Highscore = score;			
+			Progress.Highscore = score;
 		}
 		Messenger.Broadcast(Events.ScoreChanged, score, Progress.Highscore, pulse);
 	}
@@ -55,10 +55,5 @@ public class GameLogic : MonoBehaviour
 	public bool NewBest()
 	{
 		return score == Progress.Highscore;
-	}
-
-	public void Pause()
-	{
-		The.level.running = !The.level.running;
 	}
 }
