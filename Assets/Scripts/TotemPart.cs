@@ -20,17 +20,17 @@ public class TotemPart : MonoBehaviour
 		return power > 0;
 	}
 
-    public bool Grounded()
-    {
-	    if (parent == null)
-	    {
-		    return transform.position.y - The.level.floorLevel < EPSILON;
-	    }
-	    else
-	    {
-		    return transform.position.y - (parent.transform.position.y + height) < EPSILON;
-	    }
-    }
+	public bool Grounded()
+	{
+		if (parent == null)
+		{
+			return transform.position.y - The.level.floorLevel < EPSILON;
+		}
+		else
+		{
+			return transform.position.y - (parent.transform.position.y + height) < EPSILON;
+		}
+	}
 
 	public float FloorLevel()
 	{
@@ -50,8 +50,9 @@ public class TotemPart : MonoBehaviour
 	public IEnumerator DestroyCoroutine()
 	{
 		Vector3 initPos = transform.localPosition;
+		Collider c = GetComponent<Collider>();
+		c.enabled = false;
 		Renderer r = GetComponent<Renderer>();
-		//r.enabled = false;		
 		float duration = 0.8f;
 		float shake = 0.05f;
 		for (float t = 0f; t <= 1.0f; t += Time.deltaTime / duration)

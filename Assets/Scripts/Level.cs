@@ -141,7 +141,14 @@ public class Level : MonoBehaviour
 
 	public void Menu()
 	{
-		SceneTransition.LoadScene("CampaignSelection");
+		if (endless)
+		{
+			SceneTransition.LoadScene("Menu");
+		}
+		else
+		{
+			SceneTransition.LoadScene("CampaignSelection");
+		}
 	}
 
 	public void NextLevel()
