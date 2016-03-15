@@ -13,4 +13,6 @@ Menu/Back (?)
 
 
 Sounds:
-C E G
+C E G (dynamically calculated matching music)
+
+Music /w beats, muted while in menu/paused
