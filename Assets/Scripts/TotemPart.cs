@@ -15,6 +15,8 @@ public class TotemPart : MonoBehaviour
 
 	public float power;
 
+	public SoundType sound;
+
 	public bool IsPowered()
 	{
 		return power > 0;
@@ -37,8 +39,12 @@ public class TotemPart : MonoBehaviour
 		return parent == null ? The.level.floorLevel : (height + parent.FloorLevel());
 	}
 
-	public void Jump()
+	public void Jump(bool main)
 	{
+		if (main && sound != SoundType.None)
+		{
+			SoundManager.Play(sound);
+		}
 		verticalSpeed = The.totem.jumpSpeed;
 	}
 

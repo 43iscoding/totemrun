@@ -1,3 +1,16 @@
 Buglist:
 
-Lose animation (shake) lets you collect coins
+
+UI:
+
+Play ()
+Retry
+Campaign (Play)
+Endless (Infinity)
+Quit (Door)
+Resume (Play)
+Menu/Back (?)
+
+
+Sounds:
+C E G

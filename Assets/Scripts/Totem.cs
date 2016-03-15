@@ -68,7 +68,7 @@ public class Totem : MonoBehaviour
 	{
 		for (int i = index; i < parts.Length; i++)
 		{
-			parts[i].Jump();
+			parts[i].Jump(i == index);
 		}
 	}
 

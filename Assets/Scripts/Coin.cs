@@ -11,6 +11,7 @@ public class Coin : MonoBehaviour
 	{
 		if (collected) return;
 
+		SoundManager.Play(SoundType.Coin);
 		collected = true;
 		The.gameLogic.AddScore(value, true);
 		Destroy(gameObject);

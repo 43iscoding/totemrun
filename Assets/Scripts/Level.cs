@@ -112,6 +112,7 @@ public class Level : MonoBehaviour
 	IEnumerator WinCoroutine(bool perfect)
 	{
 		Progress.LevelComplete(The.currentLevelConfig.index, perfect);
+		SoundManager.Play(SoundType.Win);
 		running = false;
 		//yield return new WaitForSeconds(1f);
 		yield return SceneTransition.FadeOut(winColor, 1f);
@@ -123,6 +124,7 @@ public class Level : MonoBehaviour
 	IEnumerator LoseCoroutine()
 	{
 		running = false;
+		SoundManager.Play(SoundType.Lose);
 		The.totem.Destroy();
 		yield return new WaitForSeconds(1f);
 		yield return SceneTransition.FadeOut(loseColor, 1f);

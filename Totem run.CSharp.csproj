@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\Pulsing.cs" />
     <Compile Include="Assets\Scripts\SceneTransition.cs" />
     <Compile Include="Assets\Scripts\SimpleSpawner.cs" />
+    <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\The.cs" />
     <Compile Include="Assets\Scripts\Totem.cs" />
     <Compile Include="Assets\Scripts\TotemPart.cs" />
