@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 
 public enum SoundType
 {
@@ -19,6 +20,10 @@ public class SoundManager : MonoBehaviour
 	private Dictionary<SoundType, AudioClip> clips;
 
 	public AudioSource source;
+
+	public AudioMixerSnapshot gameSnapshot;
+	public AudioMixerSnapshot pausedSnapshot;
+	public AudioMixerSnapshot menuSnapshot;
 
 	public AudioClip jump1;
 	public AudioClip jump2;
@@ -67,6 +72,29 @@ public class SoundManager : MonoBehaviour
 			Debug.LogWarning("No sound for " + sound);
 		}
 
-		instance.source.PlayOneShot(instance.clips[sound]);		
+		instance.source.PlayOneShot(instance.clips[sound]);
+	}
+
+	public static void TransitionToMenu()
+	{
+		instance.menuSnapshot.TransitionTo(3);
+	}
+
+	public static void TransitionToPause(bool paused)
+	{
+		if (paused)
+		{
+			instance.pausedSnapshot.TransitionTo(1);
+		}
+		else
+		{
+			TransitionToGame(1);
+		}
+		
+	}
+
+	public static void TransitionToGame(float duration = 3)
+	{
+		instance.gameSnapshot.TransitionTo(3);
 	}
 }

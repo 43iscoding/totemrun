@@ -22,6 +22,7 @@ public class CampaignSelectionLogic : MonoBehaviour {
 
 		The.currentLevelConfig = instance.levels[index];
 		SceneTransition.LoadScene("Campaign");
+		SoundManager.TransitionToGame();
 	}
 
 	void Update()

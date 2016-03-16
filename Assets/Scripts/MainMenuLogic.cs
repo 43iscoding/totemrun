@@ -40,13 +40,14 @@ public class MainMenuLogic : MonoBehaviour
 	}
 
 	public void OnCampaignClick()
-	{		
-		SceneTransition.LoadScene("CampaignSelection");		
+	{
+		SceneTransition.LoadScene("CampaignSelection");
 	}
 
 	public void OnEndlessClick()
 	{
 		SceneTransition.LoadScene("Endless");
+		SoundManager.TransitionToGame();
 	}
 
 	public void OnExitClick()

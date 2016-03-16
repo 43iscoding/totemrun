@@ -115,6 +115,7 @@ public class Level : MonoBehaviour
 		SoundManager.Play(SoundType.Win);
 		running = false;
 		//yield return new WaitForSeconds(1f);
+		SoundManager.TransitionToPause(true);
 		yield return SceneTransition.FadeOut(winColor, 1f);
 		winScreen.SetActive(true);
 		this.perfect.SetActive(perfect);
@@ -127,6 +128,7 @@ public class Level : MonoBehaviour
 		SoundManager.Play(SoundType.Lose);
 		The.totem.Destroy();
 		yield return new WaitForSeconds(1f);
+		SoundManager.TransitionToPause(true);
 		yield return SceneTransition.FadeOut(loseColor, 1f);
 		loseScreen.SetActive(true);
 		if (newBest != null)
@@ -139,6 +141,7 @@ public class Level : MonoBehaviour
 	public void Restart()
 	{
 		SceneTransition.ReloadScene();
+		SoundManager.TransitionToGame();
 	}
 
 	public void Menu()
@@ -151,6 +154,7 @@ public class Level : MonoBehaviour
 		{
 			SceneTransition.LoadScene("CampaignSelection");
 		}
+		SoundManager.TransitionToMenu();
 	}
 
 	public void NextLevel()
@@ -181,5 +185,6 @@ public class Level : MonoBehaviour
 		running = !running;
 		pauseScreen.SetActive(!running);
 		pauseButton.enabled = running;
+		SoundManager.TransitionToPause(!running);
 	}
 }
